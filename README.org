@@ -10,7 +10,7 @@
 #+html: </div>
 #+begin_quote
 This is made with AI. 
-Already I have made a script previously related to this project called (github) [[https://github.com/touhidulshawan/waldl][waldl]] (codeberg) [[https://codberg.org/touhidulshawan/waldl][waldl]]. You can check that out.
+Already I have made a script previously related to this project called (github) [[https://github.com/touhidulshawan/waldl][waldl]] (codeberg) [[https://codeberg.org/touhidulshawan/waldl][waldl]]. You can check that out.
 #+end_quote
 
 * Table of Contents :toc:

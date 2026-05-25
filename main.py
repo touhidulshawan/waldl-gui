@@ -1,5 +1,5 @@
 """
-Waldl-GUI
+waldl-gui — Wallhaven Image Downloader  (Catppuccin Mocha)
 GUI app to search, browse, and download wallpapers from wallhaven.cc
 """
 
@@ -43,57 +43,57 @@ COLORS  = ["Any","660000","990000","cc0000","cc3333","ea4c88","993399","663399",
            "999900","cccc33","ffff00","ffcc33","ff9900","ff6600","cc6633","996633",
            "663300","000000","999999","cccccc","ffffff","424153"]
 
-# ─── Gruvbox Dark Hard palette ────────────────────────────────────────────────
-# Backgrounds
-GB_BG_H   = "#1d2021"   # hard dark  – main window bg
-GB_BG     = "#282828"   # dark       – toolbar / log bar
-GB_BG1    = "#3c3836"   # bg+1       – sidebar
-GB_BG2    = "#504945"   # bg+2       – card / tile bg
-GB_BG3    = "#665c54"   # bg+3       – subtle borders
-GB_BG4    = "#7c6f64"   # bg+4       – dimmer borders
+# ─── Catppuccin Mocha palette ─────────────────────────────────────────────────
+# Base layers
+CAT_CRUST  = "#11111b"   # deepest bg   – window background
+CAT_MANTLE = "#181825"   # deeper bg    – toolbar / log bar
+CAT_BASE   = "#1e1e2e"   # base bg      – sidebar
+CAT_SURF0  = "#313244"   # surface 0    – card / tile bg
+CAT_SURF1  = "#45475a"   # surface 1    – subtle borders
+CAT_SURF2  = "#585b70"   # surface 2    – dimmer elements
 
-# Foregrounds
-GB_FG     = "#ebdbb2"   # fg         – primary text
-GB_FG1    = "#d5c4a1"   # fg+1       – secondary text
-GB_FG2    = "#bdae93"   # fg+2       – muted text
-GB_FG3    = "#a89984"   # fg+3       – very muted
-GB_FG4    = "#928374"   # fg+4       – placeholder
+# Overlays / text
+CAT_OVL0   = "#6c7086"   # overlay 0    – placeholder / very muted
+CAT_OVL1   = "#7f849c"   # overlay 1    – muted text
+CAT_OVL2   = "#9399b2"   # overlay 2    – dim text
+CAT_SUB0   = "#a6adc8"   # subtext 0    – secondary text
+CAT_SUB1   = "#bac2de"   # subtext 1    – secondary text bright
+CAT_TEXT   = "#cdd6f4"   # text         – primary text
 
-# Accent colours
-GB_RED    = "#cc241d"   # dark red
-GB_RED_B  = "#fb4934"   # bright red
-GB_GREEN  = "#98971a"   # dark green
-GB_GRN_B  = "#b8bb26"   # bright green
-GB_YELLOW = "#d79921"   # dark yellow
-GB_YLW_B  = "#fabd2f"   # bright yellow
-GB_BLUE   = "#458588"   # dark blue
-GB_BLU_B  = "#83a598"   # bright blue
-GB_PURPLE = "#b16286"   # dark purple
-GB_PUR_B  = "#d3869b"   # bright purple
-GB_AQUA   = "#689d6a"   # dark aqua
-GB_AQU_B  = "#8ec07c"   # bright aqua
-GB_ORANGE = "#d65d0e"   # dark orange
-GB_ORG_B  = "#fe8019"   # bright orange
+# Accent colours (Catppuccin Mocha)
+CAT_LAVEN  = "#b4befe"   # lavender
+CAT_BLUE   = "#89b4fa"   # blue
+CAT_SAPPH  = "#74c7ec"   # sapphire
+CAT_SKY    = "#89dceb"   # sky
+CAT_TEAL   = "#94e2d5"   # teal
+CAT_GREEN  = "#a6e3a1"   # green
+CAT_YELLOW = "#f9e2af"   # yellow
+CAT_PEACH  = "#fab387"   # peach
+CAT_MAROON = "#eba0ac"   # maroon
+CAT_RED    = "#f38ba8"   # red
+CAT_MAUVE  = "#cba6f7"   # mauve  ← primary accent
+CAT_PINK   = "#f5c2e7"   # pink
+CAT_FLAM   = "#f2cdcd"   # flamingo
 
 # Semantic aliases
-BG        = GB_BG_H
-SIDEBAR   = GB_BG1
-CARD      = GB_BG
-CARD_SEL  = GB_BG2
-TOOLBAR   = GB_BG
-ACCENT    = GB_ORANGE     # primary action colour
-ACCENT_H  = GB_ORG_B     # hover / active
-ACCENT2   = GB_BLUE       # secondary actions
-ACCENT2_H = GB_BLU_B
-FG        = GB_FG
-FG_DIM    = GB_FG2
-FG_MUTED  = GB_FG4
-SEP       = GB_BG3
-BTN_SEL   = GB_YELLOW     # selected border
-PURITY_SFW     = GB_GRN_B
-PURITY_SKETCHY = GB_YLW_B
-PURITY_NSFW    = GB_RED_B
-HEART_CLR      = GB_PUR_B
+BG        = CAT_CRUST
+SIDEBAR   = CAT_BASE
+CARD      = CAT_MANTLE
+CARD_SEL  = CAT_SURF0
+TOOLBAR   = CAT_MANTLE
+ACCENT    = CAT_MAUVE      # primary action  (mauve)
+ACCENT_H  = CAT_LAVEN      # hover / active  (lavender)
+ACCENT2   = CAT_BLUE       # secondary actions
+ACCENT2_H = CAT_SAPPH
+FG        = CAT_TEXT
+FG_DIM    = CAT_SUB0
+FG_MUTED  = CAT_OVL1
+SEP       = CAT_SURF0
+BTN_SEL   = CAT_MAUVE      # selected border
+PURITY_SFW     = CAT_GREEN
+PURITY_SKETCHY = CAT_YELLOW
+PURITY_NSFW    = CAT_RED
+HEART_CLR      = CAT_PINK
 
 
 # ─── TTK theme ────────────────────────────────────────────────────────────────
@@ -104,44 +104,44 @@ def apply_ttk_theme(root: tk.Tk):
     # Scrollbar
     style.configure("Vertical.TScrollbar",
                     gripcount=0,
-                    background=GB_BG2, darkcolor=GB_BG2, lightcolor=GB_BG2,
-                    troughcolor=GB_BG_H, bordercolor=GB_BG_H,
-                    arrowcolor=GB_FG3, relief="flat")
+                    background=CAT_SURF0, darkcolor=CAT_SURF0, lightcolor=CAT_SURF0,
+                    troughcolor=CAT_CRUST, bordercolor=CAT_CRUST,
+                    arrowcolor=CAT_OVL2, relief="flat")
     style.map("Vertical.TScrollbar",
-              background=[("active", GB_BG3), ("pressed", GB_BG4)])
+              background=[("active", CAT_SURF1), ("pressed", CAT_SURF2)])
 
     # Combobox
     style.configure("TCombobox",
-                    fieldbackground=GB_BG2,
-                    background=GB_BG2,
-                    foreground=GB_FG,
-                    selectbackground=GB_BG3,
-                    selectforeground=GB_YLW_B,
-                    bordercolor=GB_BG3,
-                    arrowcolor=GB_ORG_B,
+                    fieldbackground=CAT_SURF0,
+                    background=CAT_SURF0,
+                    foreground=CAT_TEXT,
+                    selectbackground=CAT_SURF1,
+                    selectforeground=CAT_YELLOW,
+                    bordercolor=CAT_SURF1,
+                    arrowcolor=CAT_LAVEN,
                     relief="flat",
                     padding=(6, 4))
     style.map("TCombobox",
-              fieldbackground=[("readonly", GB_BG2)],
-              foreground=[("readonly", GB_FG)],
-              bordercolor=[("focus", GB_ORANGE)])
-    root.option_add("*TCombobox*Listbox.background", GB_BG2)
-    root.option_add("*TCombobox*Listbox.foreground", GB_FG)
-    root.option_add("*TCombobox*Listbox.selectBackground", GB_BG3)
-    root.option_add("*TCombobox*Listbox.selectForeground", GB_YLW_B)
+              fieldbackground=[("readonly", CAT_SURF0)],
+              foreground=[("readonly", CAT_TEXT)],
+              bordercolor=[("focus", CAT_MAUVE)])
+    root.option_add("*TCombobox*Listbox.background", CAT_SURF0)
+    root.option_add("*TCombobox*Listbox.foreground", CAT_TEXT)
+    root.option_add("*TCombobox*Listbox.selectBackground", CAT_SURF1)
+    root.option_add("*TCombobox*Listbox.selectForeground", CAT_YELLOW)
     root.option_add("*TCombobox*Listbox.font", ("JetBrains Mono", 9))
 
     # Progressbar
     style.configure("TProgressbar",
-                    troughcolor=GB_BG,
-                    background=GB_ORANGE,
-                    bordercolor=GB_BG,
-                    lightcolor=GB_ORG_B,
-                    darkcolor=GB_ORANGE,
+                    troughcolor=CAT_MANTLE,
+                    background=CAT_MAUVE,
+                    bordercolor=CAT_MANTLE,
+                    lightcolor=CAT_LAVEN,
+                    darkcolor=CAT_MAUVE,
                     thickness=4)
 
     # Separator
-    style.configure("TSeparator", background=GB_BG3)
+    style.configure("TSeparator", background=CAT_SURF1)
 
 
 # ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -158,12 +158,12 @@ def fetch_thumbnail(url: str):
     return ImageTk.PhotoImage(img)
 
 
-def gruvbox_button(parent, text, command,
-                   bg=ACCENT2, fg=GB_BG_H,
+def cat_button(parent, text, command,
+                   bg=ACCENT2, fg=CAT_CRUST,
                    active_bg=None, **kw):
     """
     A flat button that swaps to a lighter shade on hover/press,
-    with a small internal padding and the Gruvbox font.
+    with a small internal padding and the Catppuccin Mocha theme.
     """
     if active_bg is None:
         active_bg = ACCENT2_H if bg == ACCENT2 else ACCENT_H
@@ -191,21 +191,21 @@ def gruvbox_button(parent, text, command,
     return btn
 
 
-def gruvbox_entry(parent, var, show=None, width=None):
+def cat_entry(parent, var, show=None, width=None):
     kw = {}
     if show:   kw["show"]  = show
     if width:  kw["width"] = width
     e = tk.Entry(
         parent, textvariable=var,
-        bg=GB_BG2, fg=GB_FG,
-        insertbackground=GB_YLW_B,
-        selectbackground=GB_BG3,
-        selectforeground=GB_YLW_B,
+        bg=CAT_SURF0, fg=CAT_TEXT,
+        insertbackground=CAT_YELLOW,
+        selectbackground=CAT_SURF1,
+        selectforeground=CAT_YELLOW,
         relief=tk.FLAT,
         font=_font(9),
         highlightthickness=1,
-        highlightbackground=GB_BG3,
-        highlightcolor=GB_ORANGE,
+        highlightbackground=CAT_SURF1,
+        highlightcolor=CAT_MAUVE,
         **kw,
     )
     return e
@@ -308,7 +308,7 @@ class WallhavenApp(tk.Tk):
         # orange accent bar
         tk.Frame(row, bg=ACCENT, width=3).pack(side=tk.LEFT, fill=tk.Y, padx=(0, 6))
         tk.Label(row, text=title.upper(),
-                 bg=SIDEBAR, fg=GB_YLW_B,
+                 bg=SIDEBAR, fg=CAT_YELLOW,
                  font=_font(7, "bold")).pack(side=tk.LEFT, anchor="w")
 
         # separator line
@@ -336,7 +336,7 @@ class WallhavenApp(tk.Tk):
         tk.Label(logo_f, text="⬡", bg=SIDEBAR, fg=ACCENT,
                  font=_font(28)).pack()
         tk.Label(logo_f, text="WALLHAVEN",
-                 bg=SIDEBAR, fg=GB_YLW_B,
+                 bg=SIDEBAR, fg=CAT_YELLOW,
                  font=_font(13, "bold")).pack()
         tk.Label(logo_f, text="downloader",
                  bg=SIDEBAR, fg=FG_MUTED,
@@ -346,7 +346,7 @@ class WallhavenApp(tk.Tk):
         # ── API Key ───────────────────────────────────────────────────────
         f = self._section_label(sb, "API Key")
         self._field_label(f, "Key (optional)")
-        e = gruvbox_entry(f, self.api_key, show="●")
+        e = cat_entry(f, self.api_key, show="●")
         e.pack(fill=tk.X, pady=2)
         tk.Label(f, text="Required for NSFW & private collections",
                  bg=SIDEBAR, fg=FG_MUTED, font=_font(7),
@@ -355,12 +355,12 @@ class WallhavenApp(tk.Tk):
         # ── Search ────────────────────────────────────────────────────────
         f = self._section_label(sb, "Search")
         self._field_label(f, "Query / keywords")
-        qe = gruvbox_entry(f, self.query)
+        qe = cat_entry(f, self.query)
         qe.pack(fill=tk.X, pady=2)
         qe.bind("<Return>", lambda _: self._do_search())
 
         self._field_label(f, "Tag ID  (e.g. 37)")
-        te = gruvbox_entry(f, self.tag_id)
+        te = cat_entry(f, self.tag_id)
         te.pack(fill=tk.X, pady=2)
         te.bind("<Return>", lambda _: self._do_search())
 
@@ -371,8 +371,8 @@ class WallhavenApp(tk.Tk):
                 f, text=name,
                 variable=self.category_var, value=name,
                 bg=SIDEBAR, fg=FG,
-                selectcolor=GB_BG2,
-                activebackground=SIDEBAR, activeforeground=GB_YLW_B,
+                selectcolor=CAT_SURF0,
+                activebackground=SIDEBAR, activeforeground=CAT_YELLOW,
                 font=_font(9),
                 indicatoron=True,
                 cursor="hand2",
@@ -386,8 +386,8 @@ class WallhavenApp(tk.Tk):
                 f, text=name,
                 variable=self.purity_var, value=name,
                 bg=SIDEBAR, fg=FG,
-                selectcolor=GB_BG2,
-                activebackground=SIDEBAR, activeforeground=GB_YLW_B,
+                selectcolor=CAT_SURF0,
+                activebackground=SIDEBAR, activeforeground=CAT_YELLOW,
                 font=_font(9),
                 cursor="hand2",
             )
@@ -414,26 +414,26 @@ class WallhavenApp(tk.Tk):
         self._field_label(f, "Minimum W × H")
         mf = tk.Frame(f, bg=SIDEBAR)
         mf.pack(fill=tk.X, pady=2)
-        gruvbox_entry(mf, self.min_w, width=7).pack(side=tk.LEFT)
+        cat_entry(mf, self.min_w, width=7).pack(side=tk.LEFT)
         tk.Label(mf, text=" × ", bg=SIDEBAR, fg=FG_DIM,
                  font=_font(10)).pack(side=tk.LEFT)
-        gruvbox_entry(mf, self.min_h, width=7).pack(side=tk.LEFT)
+        cat_entry(mf, self.min_h, width=7).pack(side=tk.LEFT)
 
         # ── Save Directory ────────────────────────────────────────────────
         f = self._section_label(sb, "Save Directory")
         df = tk.Frame(f, bg=SIDEBAR)
         df.pack(fill=tk.X, pady=2)
-        gruvbox_entry(df, self.save_dir).pack(side=tk.LEFT, fill=tk.X,
+        cat_entry(df, self.save_dir).pack(side=tk.LEFT, fill=tk.X,
                                                expand=True)
-        gruvbox_button(df, "…", self._browse_dir,
-                       bg=GB_BG2, fg=FG, active_bg=GB_BG3,
+        cat_button(df, "…", self._browse_dir,
+                       bg=CAT_SURF0, fg=FG, active_bg=CAT_SURF1,
                        padx=8).pack(side=tk.LEFT, padx=(4, 0))
 
         # ── Search button ─────────────────────────────────────────────────
         tk.Frame(sb, bg=SEP, height=1).pack(fill=tk.X, padx=8, pady=(16, 8))
-        gruvbox_button(
+        cat_button(
             sb, "  🔍  SEARCH  ", self._do_search,
-            bg=ACCENT, fg=GB_BG_H, active_bg=ACCENT_H,
+            bg=ACCENT, fg=CAT_CRUST, active_bg=ACCENT_H,
             font=_font(11, "bold"),
             pady=10,
         ).pack(fill=tk.X, padx=10, pady=(0, 20))
@@ -448,8 +448,8 @@ class WallhavenApp(tk.Tk):
         lg = tk.Frame(tb, bg=TOOLBAR)
         lg.pack(side=tk.LEFT, fill=tk.Y, padx=(10, 0))
 
-        gruvbox_button(lg, "◀  Prev", self._prev_page,
-                       bg=GB_BG2, fg=FG, active_bg=GB_BG3).pack(
+        cat_button(lg, "◀  Prev", self._prev_page,
+                       bg=CAT_SURF0, fg=FG, active_bg=CAT_SURF1).pack(
                        side=tk.LEFT, pady=10, padx=(0, 4))
 
         self.page_lbl = tk.Label(lg, text="—  /  —",
@@ -457,8 +457,8 @@ class WallhavenApp(tk.Tk):
                                   font=_font(9))
         self.page_lbl.pack(side=tk.LEFT, padx=8)
 
-        gruvbox_button(lg, "Next  ▶", self._next_page,
-                       bg=GB_BG2, fg=FG, active_bg=GB_BG3).pack(
+        cat_button(lg, "Next  ▶", self._next_page,
+                       bg=CAT_SURF0, fg=FG, active_bg=CAT_SURF1).pack(
                        side=tk.LEFT, pady=10, padx=(4, 0))
 
         # divider
@@ -469,22 +469,22 @@ class WallhavenApp(tk.Tk):
         mg = tk.Frame(tb, bg=TOOLBAR)
         mg.pack(side=tk.LEFT, fill=tk.Y)
 
-        gruvbox_button(mg, "✔ All", self._select_all,
-                       bg=GB_GREEN, fg=GB_BG_H, active_bg=GB_GRN_B).pack(
+        cat_button(mg, "✔ All", self._select_all,
+                       bg=CAT_GREEN, fg=CAT_CRUST, active_bg=CAT_GREEN).pack(
                        side=tk.LEFT, pady=10, padx=(0, 4))
-        gruvbox_button(mg, "✘ Clear", self._clear_sel,
-                       bg=GB_RED, fg=GB_FG, active_bg=GB_RED_B).pack(
+        cat_button(mg, "✘ Clear", self._clear_sel,
+                       bg=CAT_RED, fg=CAT_TEXT, active_bg=CAT_RED).pack(
                        side=tk.LEFT, pady=10)
 
         self.sel_lbl = tk.Label(mg, text="0 selected",
-                                 bg=TOOLBAR, fg=GB_YLW_B,
+                                 bg=TOOLBAR, fg=CAT_YELLOW,
                                  font=_font(9, "bold"))
         self.sel_lbl.pack(side=tk.LEFT, padx=12)
 
         # right group – download
-        gruvbox_button(tb, "  ⬇  Download Selected  ",
+        cat_button(tb, "  ⬇  Download Selected  ",
                        self._download_selected,
-                       bg=ACCENT, fg=GB_BG_H, active_bg=ACCENT_H,
+                       bg=ACCENT, fg=CAT_CRUST, active_bg=ACCENT_H,
                        font=_font(10, "bold"),
                        pady=6).pack(side=tk.RIGHT, padx=12, pady=10)
 
@@ -520,7 +520,7 @@ class WallhavenApp(tk.Tk):
 
     # ── Log / Status bar ──────────────────────────────────────────────────────
     def _build_log(self, parent):
-        bottom = tk.Frame(parent, bg=GB_BG_H)
+        bottom = tk.Frame(parent, bg=CAT_CRUST)
         bottom.pack(fill=tk.X, side=tk.BOTTOM)
 
         self.progress = ttk.Progressbar(bottom, mode="indeterminate",
@@ -528,12 +528,12 @@ class WallhavenApp(tk.Tk):
         self.progress.pack(fill=tk.X)
 
         self.log_var = tk.StringVar(value="Ready.")
-        bar = tk.Frame(bottom, bg=GB_BG, pady=3)
+        bar = tk.Frame(bottom, bg=CAT_MANTLE, pady=3)
         bar.pack(fill=tk.X)
-        tk.Label(bar, text="›", bg=GB_BG, fg=ACCENT,
+        tk.Label(bar, text="›", bg=CAT_MANTLE, fg=ACCENT,
                  font=_font(10, "bold")).pack(side=tk.LEFT, padx=(8, 2))
         tk.Label(bar, textvariable=self.log_var,
-                 bg=GB_BG, fg=FG_MUTED,
+                 bg=CAT_MANTLE, fg=FG_MUTED,
                  font=_font(8), anchor="w").pack(side=tk.LEFT, fill=tk.X)
 
     def _log(self, msg: str):
@@ -659,7 +659,7 @@ class WallhavenApp(tk.Tk):
         outer.grid(row=row, column=col, sticky="nsew", padx=4, pady=4)
 
         # card frame — border colour changes on select
-        border_clr = GB_YLW_B if sel else GB_BG3
+        border_clr = CAT_YELLOW if sel else CAT_SURF1
         card = tk.Frame(outer, bg=border_clr, bd=1, relief=tk.FLAT)
         card.pack(fill=tk.BOTH, expand=True)
 
@@ -667,7 +667,7 @@ class WallhavenApp(tk.Tk):
         inner.pack(fill=tk.BOTH, expand=True, padx=1, pady=1)
 
         # ── Thumbnail ─────────────────────────────────────────────────────
-        img_lbl = tk.Label(inner, bg=GB_BG2,
+        img_lbl = tk.Label(inner, bg=CAT_SURF0,
                            width=THUMB_SIZE[0], height=THUMB_SIZE[1],
                            text="loading…", fg=FG_MUTED,
                            font=_font(8))
@@ -697,7 +697,7 @@ class WallhavenApp(tk.Tk):
                  font=_font(7)).pack(side=tk.RIGHT)
 
         # ── Select bar ────────────────────────────────────────────────────
-        sel_bar = tk.Frame(inner, bg=GB_BG2, pady=3)
+        sel_bar = tk.Frame(inner, bg=CAT_SURF0, pady=3)
         sel_bar.pack(fill=tk.X)
 
         var = tk.BooleanVar(value=sel)
@@ -705,20 +705,20 @@ class WallhavenApp(tk.Tk):
         def toggle(w=wid, v=var, c=card, ib=inner):
             if v.get():
                 self.selected.add(w)
-                c.config(bg=GB_YLW_B)
+                c.config(bg=CAT_YELLOW)
                 ib.config(bg=CARD)
             else:
                 self.selected.discard(w)
-                c.config(bg=GB_BG3)
+                c.config(bg=CAT_SURF1)
                 ib.config(bg=CARD)
             self._refresh_sel_label()
 
         chk = tk.Checkbutton(
             sel_bar, text="  Select",
             variable=var, command=toggle,
-            bg=GB_BG2, fg=FG,
-            selectcolor=GB_BG3,
-            activebackground=GB_BG2, activeforeground=GB_YLW_B,
+            bg=CAT_SURF0, fg=FG,
+            selectcolor=CAT_SURF1,
+            activebackground=CAT_SURF0, activeforeground=CAT_YELLOW,
             font=_font(8),
             cursor="hand2",
             relief=tk.FLAT,
@@ -729,7 +729,7 @@ class WallhavenApp(tk.Tk):
 
         # wallpaper ID chip
         tk.Label(sel_bar, text=f"#{wid}",
-                 bg=GB_BG2, fg=FG_MUTED,
+                 bg=CAT_SURF0, fg=FG_MUTED,
                  font=_font(7)).pack(side=tk.RIGHT, padx=6)
 
         # store refs
@@ -775,7 +775,7 @@ class WallhavenApp(tk.Tk):
             wid = t["wp"]["id"]
             self.selected.add(wid)
             t["var"].set(True)
-            t["card"].config(bg=GB_YLW_B)
+            t["card"].config(bg=CAT_YELLOW)
         self._refresh_sel_label()
 
     def _clear_sel(self):
@@ -783,7 +783,7 @@ class WallhavenApp(tk.Tk):
             wid = t["wp"]["id"]
             self.selected.discard(wid)
             t["var"].set(False)
-            t["card"].config(bg=GB_BG3)
+            t["card"].config(bg=CAT_SURF1)
         self._refresh_sel_label()
 
     # ══════════════════════════════════════════════════════════════════════════
