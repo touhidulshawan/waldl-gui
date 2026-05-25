@@ -47,7 +47,6 @@ Already I have made a script previously related to this project called (github) 
 - Per-image checkboxes with Select All / Clear
 - Bulk download of selected images
 - Live status log bar showing API requests and responses
-- Gruvbox Dark Hard colour theme
 
 * Requirements
 
