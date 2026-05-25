@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Wallhaven Downloader
+Comment=Search and download wallpapers from wallhaven.cc
+# Update Exec path after build:
+Exec=/opt/wallhaven/WallhavenDownloader
+# Icon=wallhaven
+Terminal=false
+Categories=Graphics;Photography;Network;
+Keywords=wallpaper;wallhaven;download;background;
+StartupNotify=true
