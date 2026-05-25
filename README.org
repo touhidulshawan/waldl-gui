@@ -1,6 +1,6 @@
 #+TITLE: waldl-gui
 #+SUBTITLE: A wallhaven.cc wallpaper browser & downloader
-#+AUTHOR:
+#+AUTHOR: Touhidul Shawan
 #+OPTIONS: toc:2 num:nil ^:nil
 
 #+html: <div align="center">
@@ -12,6 +12,8 @@
 This is made with AI. 
 Already I have made a script previously related to this project called (github) [[https://github.com/touhidulshawan/waldl][waldl]] (codeberg) [[https://codeberg.org/touhidulshawan/waldl][waldl]]. You can check that out.
 #+end_quote
+
+[[file:waldl.png]]
 
 * Table of Contents :toc:
 - [[#features][Features]]
